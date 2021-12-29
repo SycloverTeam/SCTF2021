@@ -1,0 +1,51 @@
+<html>
+<head>
+  <title>Forbidden</title>
+  <style type="text/css">
+  html,body{
+    padding: 0;
+    margin: 0;
+    height: 100%;
+  }
+
+  html,body,img{
+    width: 100%;
+  }
+
+  button {
+    margin:auto;
+    display:block;
+    margin-top:22%;
+    margin-bottom:0%;
+
+    width:140px;
+    height:50px;
+  }
+
+  </style>
+</head>
+<body>
+    <div style="text-align:center">
+        <button id="play">
+            Flag is here!
+        </button>
+    </div>
+
+    <img src="assets/images/rickroll.gif" id="lol-img" hidden/>
+    <audio autoplay loop preload volume=1 src="assets/audio/rickroll.mp3" id="lol-audio" hidden></audio>
+
+    <script src="assets/vendor/jquery/jquery-3.2.1.min.js"></script>
+    <script>
+        // $("#lol-img").hide()
+        // $("#lol-audio").hide()
+
+        $("#play").on('click', function() {
+            $("#play").hide()
+
+            $("#lol-audio").show()
+            $("#lol-audio")[0].play()
+            $("#lol-img").show()
+        })
+    </script>
+</body>
+</html>

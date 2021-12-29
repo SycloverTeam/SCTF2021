@@ -1,0 +1,9 @@
+version: "3"
+services:
+  upload-it:
+    build:
+      context: ./php
+      dockerfile: Dockerfile
+    restart: always
+    ports:
+      - "8778:80"

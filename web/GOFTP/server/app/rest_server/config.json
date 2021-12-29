@@ -1,0 +1,13 @@
+{
+    "AppConfig": {
+        "host":"0.0.0.0",
+        "port":"9000"
+    },
+
+    "DBConfig": {
+        "username" : "root",
+        "password" : "syclover123456",
+        "address"  : "mysql-server",
+        "database" : "ftptest"
+    }
+}

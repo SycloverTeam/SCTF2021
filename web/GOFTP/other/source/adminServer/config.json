@@ -1,0 +1,13 @@
+{
+    "AppConfig": {
+        "host":"0.0.0.0",
+        "port":"9000"
+    },
+
+    "DBConfig": {
+        "username" : "root",
+        "password" : "123456",
+        "address"  : "localhost",
+        "database" : "ftptest"
+    }
+}
