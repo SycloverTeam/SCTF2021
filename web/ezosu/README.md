@@ -17,6 +17,7 @@ docker-compose down --rmi all
 本题利用了一个名为`imi`的框架。
 
 本题有且只有一个路由由php处理`/config`，其实现如下：
+
 ![image-20211229211433630](https://gitee.com/AFKL/image/raw/master/img/image-20211229211433630.png)
 
 这个路由的代码中最惹人注意的地方是，session的键值是可以被用户控制的。
@@ -24,6 +25,7 @@ docker-compose down --rmi all
 imi框架是用swoole起点的，但swoole本身不支持php的原生session，所以为了兼容原生的session，imi框架自己写了一个session模块，并兼容了原生session。
 
 在原生session文件处理的实现中，开发者使用`|`对属性进行分割，但键名没有过滤，可以插入`|`。如果用户可控键名，那么就会导致反序列化逃逸。
+
 ![image-20211229210444085](https://gitee.com/AFKL/image/raw/master/img/image-20211229210444085.png)
 
 ## find gadget
@@ -91,14 +93,18 @@ namespace {
 ```
 
 入口是十分经典的`LazyString`，其`__sleep`会去调用`__toString`方法。一些选手使用此方法以为是什么神秘的地方调用了`__toString`，实际上是调用了`__sleep`方法。
+
 ![image-20211229232716199](https://gitee.com/AFKL/image/raw/master/img/image-20211229232716199.png)
 
 这里我们可以调用任意类的公共方法，这里我选择了`Imi\Aop\AroundJoinPoint::proceed`:
+
 ![image-20211229232832689](https://gitee.com/AFKL/image/raw/master/img/image-20211229232832689.png)
 其参数默认为null，`$args`可以通过父类属性获取，但必须是`array`类型。这个地方的动态调用虽然函数可控，但参数只有一个，且参数类型必须是`array`，是无法getshell的。那么就继续找存在动态调用的公共方法。
 
 最终找到了`GrahamCampbell\ResultType\Success::flatMap`，其参数必须是`callable`类型。
+
 ![image-20211229233610931](https://gitee.com/AFKL/image/raw/master/img/image-20211229233610931.png)
+
 动态调用公共方法的数组是被算作`callable`类型的，所以只要利用两次这个方法即可。
 
 ![调用流程图](https://gitee.com/AFKL/image/raw/master/img/未命名文件.png)
