@@ -13,3 +13,4 @@ docker-compose down --rmi all
 
 # writeup
 
+详细请见`Upload it 1`的wp。
