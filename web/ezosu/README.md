@@ -118,6 +118,6 @@ namespace {
 
 如果抛开`monolog`的话，本题找`destruct`或`wakeup`起点的链其实很难。因为此框架的类属性都是限定类型的，那么找gadget就会变成java那样比较麻烦。目前来看目前没有一个队伍的起点是`imi`框架里的。
 
-## other print
+## other point
 
 因为开发者设置的特殊规则，session键值中的`.`符号会被解释为子属性。因此链中的`.`符号必须进行特殊处理。比如我这里使用php反弹shell时将会被转义的符号url编码，在执行反弹shell代码的时候再解开。
