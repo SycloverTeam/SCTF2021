@@ -1,0 +1,7 @@
+version: '3'
+services:
+  ctf:
+    build: ./ctf
+    container_name: "song"
+    ports:
+      - "2144:9999"
