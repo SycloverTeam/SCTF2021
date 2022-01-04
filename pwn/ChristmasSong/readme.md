@@ -2,6 +2,15 @@
 
 [toc]
 
+## 题目描述
+
+一个真正的黑客可以在短时间内学习一个新语言的简单用法， 你可以在一天内学会圣诞歌么？注意播放圣诞歌不能说话！(flag范围dic = string.ascii_letters + string.digits + "*}")(slang 圣诞特别版 请检查源码包 https://drive.google.com/file/d/1uKjp2MGWdLWcwx4wfnpsMNEzXacb0ZbO/view?usp=sharing )
+A real hacker can learn the simple usage of a new language in a short time, can you learn Christmas songs in a day? Note that you can’t talk when playing Christmas songs! (flag range dic = string.ascii_letters + string.digits + "*}) (slang Christmas Special Edition Please check the source code package https://drive.google.com/file/d/1uKjp2MGWdLWcwx4wfnpsMNEzXacb0ZbO/view?usp=sharing )
+
+题目分值：625
+
+解题人数：13
+
 题目源码：[slang -christmas](https://github.com/wlingze/Slang/tree/christmas)， 
 
 ## Slang-christmas设计思路 1

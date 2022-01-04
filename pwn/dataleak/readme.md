@@ -2,6 +2,14 @@
 
 [toc]
 
+## 题目描述
+
+Never trust c pointer magic and escape characters,
+
+题目分值：281
+
+解题人数：52
+
 ## 出题思路
 
 最开始其实是cjson这个组件的漏洞 ，主要是 [CVE-2019-11834](https://github.com/DaveGamble/cJSON/issues/337)和[CVE-2019-11835](https://github.com/DaveGamble/cJSON/issues/338)，
