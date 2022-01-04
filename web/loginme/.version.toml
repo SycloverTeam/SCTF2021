@@ -1,0 +1,8 @@
+[main]
+  version   = "1.0.0"
+  tag       = false
+  serialize = "{version}-{banner}"
+[[operate]]
+  location = "pyproject.toml"
+  search   = "version = \"{}\""
+  replace  = "version = \"{}\""
