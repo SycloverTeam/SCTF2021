@@ -1,0 +1,7 @@
+version: '3'
+services:
+  ctf:
+    build: ./ctf
+    container_name: dataleak
+    ports:
+      - "2101:9999"
