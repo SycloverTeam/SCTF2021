@@ -1,0 +1,9 @@
+version: "3"
+services:
+  fumo:
+    build:
+      context: ./server
+      dockerfile: Dockerfile
+    restart: always
+    ports:
+      - "8778:80"

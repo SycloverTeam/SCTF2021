@@ -1,0 +1,15 @@
+{
+    "WebConfig": {
+        "host":"0.0.0.0",
+        "port":"8888"
+    },
+
+    "ApiConfig": {
+        "addr":"http://127.0.0.1:9000"
+    },
+
+    "SessionConfig": {
+        "name":"SESSION",
+        "secret":"https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+    }
+}

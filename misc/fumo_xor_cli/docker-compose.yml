@@ -1,0 +1,9 @@
+version: "3"
+services:
+  cfumo:
+    build: .
+    restart: always
+    ports:
+      - "2333:9999"
+    environment:
+      FTIME: 0.1 

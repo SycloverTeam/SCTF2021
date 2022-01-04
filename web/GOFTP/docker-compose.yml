@@ -1,0 +1,27 @@
+version: '3'
+services:
+  mysql:
+    restart: always
+    build:
+      context: ./mysql
+      dockerfile: Dockerfile
+    container_name: mysql-server
+    environment:
+      MYSQL_ROOT_PASSWORD: syclover123456
+    networks: 
+      ftptest:
+  
+  server:
+    build:
+      context: ./server
+      dockerfile: Dockerfile
+    container_name: web-server
+    ports:
+      - 8001:8888
+    depends_on:
+      - mysql
+    networks: 
+      ftptest:
+
+networks:
+  ftptest:
