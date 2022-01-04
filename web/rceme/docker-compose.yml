@@ -1,0 +1,9 @@
+version: "3"
+services:
+  web:
+    build:
+      context: .
+    restart: always
+    tty: True
+    ports:
+      - 8001:80
