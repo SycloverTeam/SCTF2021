@@ -1,6 +1,23 @@
 # Christmas Bash
 
-[toc]
+* [Christmas Bash](#christmas-bash)
+   * [题目描述](#题目描述)
+   * [Slang-christmas设计思路 2](#slang-christmas设计思路-2)
+      * [opcode生成](#opcode生成)
+      * [scom文件结构](#scom文件结构)
+      * [dis模块逻辑](#dis模块逻辑)
+   * [漏洞审计](#漏洞审计)
+      * [类型混淆](#类型混淆)
+      * [栈溢出](#栈溢出)
+      * [sleep](#sleep)
+   * [题目环境](#题目环境)
+   * [利用](#利用)
+      * [栈溢出利用](#栈溢出利用)
+      * [scom文件自修改](#scom文件自修改)
+         * [栈迁移地址](#栈迁移地址)
+         * [两次运行不一致](#两次运行不一致)
+      * [rop链](#rop链)
+   * [exp](#exp)
 
 ## 题目描述
 
