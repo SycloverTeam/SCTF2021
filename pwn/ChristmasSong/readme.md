@@ -4,7 +4,7 @@
 
 题目源码：[slang -christmas](https://github.com/wlingze/Slang/tree/christmas)， 
 
-## Slang-christmas设计思路
+## Slang-christmas设计思路 1
 
 ### 设计
 
@@ -48,7 +48,35 @@ int main(int argc, char * argv[]){
 }
 ```
 
+```c
 
+void load_file(char *path){
+    char dir[0x60];
+    char name[0x60];
+    char slang_file[0x120];
+    char scom_file[0x120];
+
+    int is_slang = check_suffix(path, dir, name);
+
+    snprintf(slang_file, 0x120, "%s/%s.slang", dir, name);
+    snprintf(scom_file, 0x120, "%s/%s.scom", dir, name);
+
+    if (FLAG == COMPILE){
+        if (is_slang)
+            compile_file(slang_file, scom_file);
+        printf("compile file scom\n");
+    } else {
+        if (is_slang)
+            compile_file(slang_file, scom_file);
+        lambda_t *lambda = load_scom(scom_file);
+
+        if (FLAG == RUN)
+            vm_call_lambda(lambda);
+        if (FLAG == DISASM)
+            disasm(lambda);
+    }
+}
+```
 
 ### 目录结构
 

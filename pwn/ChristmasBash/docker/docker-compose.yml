@@ -1,0 +1,7 @@
+version: '3'
+services:
+  ctf:
+    build: ./ctf
+    container_name: "bash"
+    ports:
+      - "2155:9999"
