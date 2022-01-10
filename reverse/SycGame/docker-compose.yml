@@ -1,0 +1,7 @@
+version: '3'
+services:
+  ctf:
+    build: ctf_xinetd/
+    container_name: "SycGame"
+    ports:
+      - "1448:9999"
